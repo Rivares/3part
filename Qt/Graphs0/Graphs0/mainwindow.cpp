@@ -211,10 +211,10 @@ void MainWindow::drawGraph(bool notEmpty)
 
 
         paint.setPen(QPen(Qt::blue,1,Qt::SolidLine));
-        paint.drawPath(path);
+        paint.drawPath(p[0]);
 
         paint.setPen(QPen(Qt::green,1,Qt::SolidLine));
-        paint.drawPath(p[0]);
+        paint.drawPath(path);
     }
 
     if(ui->Mexch->isChecked()) {
@@ -248,10 +248,10 @@ void MainWindow::drawGraph(bool notEmpty)
         }
 
         paint.setPen(QPen(Qt::blue,1,Qt::SolidLine));
-        paint.drawPath(path);
+        paint.drawPath(p[0]);
 
         paint.setPen(QPen(Qt::green,1,Qt::SolidLine));
-        paint.drawPath(p[0]);
+        paint.drawPath(path);
     }
 
 

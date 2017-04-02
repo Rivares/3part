@@ -364,6 +364,7 @@ public:
         label_12 = new QLabel(centralWidget);
         label_12->setObjectName(QStringLiteral("label_12"));
         label_12->setGeometry(QRect(170, 420, 31, 20));
+        label_12->setStyleSheet(QStringLiteral(""));
         label_13 = new QLabel(centralWidget);
         label_13->setObjectName(QStringLiteral("label_13"));
         label_13->setGeometry(QRect(150, 450, 61, 20));
@@ -399,6 +400,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+#ifndef QT_NO_TOOLTIP
+        MainWindow->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>Simulation Program</p></body></html>", 0));
+#endif // QT_NO_TOOLTIP
         action->setText(QApplication::translate("MainWindow", "\320\241\320\276\321\205\321\200\320\260\320\275\320\270\321\202\321\214 \320\272\320\260\321\200\321\202\320\270\320\275\320\272\321\203", 0));
         action_3->setText(QApplication::translate("MainWindow", "\320\222\321\213\321\205\320\276\320\264", 0));
         label->setText(QApplication::translate("MainWindow", "\320\230\320\275\321\202\320\265\321\200\320\262\320\260\320\273\321\213:", 0));
@@ -416,16 +420,16 @@ public:
         label_8->setText(QApplication::translate("MainWindow", "\320\242\320\276\321\207\320\275\320\276\321\201\321\202\321\214", 0));
         inputAccuracy->setText(QApplication::translate("MainWindow", "700", 0));
         Hexch->setText(QString());
-        label_9->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#0000ff;\">\320\242\320\265\320\277\320\273\320\276\320\276\320\261\320\274\320\265\320\275\320\275\320\260\321\217 \320\274\320\276\320\264\320\265\320\273\321\214</span></p></body></html>", 0));
+        label_9->setText(QApplication::translate("MainWindow", "<html><head/><body><p>\320\242\320\265\320\277\320\273\320\276\320\276\320\261\320\274\320\265\320\275\320\275\320\260\321\217 \320\274\320\276\320\264\320\265\320\273\321\214</p></body></html>", 0));
         Mexch->setText(QString());
-        label_10->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:green;\">\320\234\320\260\321\201\321\201\320\276\320\261\320\274\320\265\320\275\320\275\320\260\321\217 \320\274\320\276\320\264\320\265\320\273\321\214<span/></p></body></html>", 0));
+        label_10->setText(QApplication::translate("MainWindow", "<html><head/><body><p>\320\234\320\260\321\201\321\201\320\276\320\276\320\261\320\274\320\265\320\275\320\275\320\260\321\217 \320\274\320\276\320\264\320\265\320\273\321\214</p></body></html>", 0));
         draw->setText(QApplication::translate("MainWindow", "\320\237\320\276\321\201\321\202\321\200\320\276\320\270\321\202\321\214", 0));
         clear->setText(QApplication::translate("MainWindow", "\320\236\321\202\321\207\320\270\321\201\321\202\320\270\321\202\321\214", 0));
         save->setText(QApplication::translate("MainWindow", "\320\241\320\276\321\205\321\200\320\260\320\275\320\270\321\202\321\214", 0));
         exit->setText(QApplication::translate("MainWindow", "\320\222\321\213\320\271\321\202\320\270", 0));
         label_11->setText(QApplication::translate("MainWindow", "\320\243\321\201\321\202\320\260\320\275\320\276\320\262.\320\267\320\275\320\260\321\207.", 0));
-        label_12->setText(QApplication::translate("MainWindow", "\320\237\320\260\321\200:", 0));
-        label_13->setText(QApplication::translate("MainWindow", "\320\226\320\270\320\264\320\272\320\276\321\201\321\202\321\214:", 0));
+        label_12->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#299d32;\">\320\237\320\260\321\200:</span></p></body></html>", 0));
+        label_13->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#2677cd;\">\320\226\320\270\320\264\320\272\320\276\321\201\321\202\321\214:</span></p></body></html>", 0));
         menu->setTitle(QApplication::translate("MainWindow", "\320\244\320\260\320\271\320\273", 0));
         menu_2->setTitle(QApplication::translate("MainWindow", "\320\241\320\277\321\200\320\260\320\262\320\272\320\260", 0));
     } // retranslateUi
