@@ -58,7 +58,6 @@ void displayMe()
 
     // -----Model's mass exchenger parameters------
     double RvM = 0.004302, RfM = 0.00001222, E = 0.000000001,
-    PCV = (0.07453 * dt) / h, PCF = (0.0002402 * dt) / h,
     initLayerCV[z] = {67.94, 67.94, 69.96, 72.04, 72.04},
     initLayerCF[z] = {6.5, 6.5, 4.613, 2.78, 2.78};
 

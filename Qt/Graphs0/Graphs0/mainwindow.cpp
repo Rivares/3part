@@ -19,9 +19,10 @@ MainWindow::MainWindow(QWidget *parent) :
         PTV_L = (a0 * 273.15 * dt) / hl, PTV_N = 0, PTF = (0.0002291314 * dt) / hl;
 
         // -----Model's mass exchenger parameters------
-        double RvM = 0.004302, RfM = 0.00001222, E = 0.000000001,
-        PCV = (0.07453 * dt) / hl, PCF = (0.0002402 * dt) / hl;
+        double RvM = 0.004302, RfM = 0.00001222, E = 0.000000001;
 
+        //----------Petrtubation----------
+        double petrub = 8; // Temperature(min:-maxHeat:12.5), gas flow or pressure differential?
 
         bmp.assign(z,0);
 
@@ -89,7 +90,7 @@ MainWindow::MainWindow(QWidget *parent) :
            {
                 // -----Calculate layer heat exchenger model------
                 PTV_N = (a0*TV[i-1][j+1] * dt) / hl;
-                TV[i][j] = -TV[i-1][j] * (PTV_L - 1 - PTV_N + dt*RvT) + (PTV_L * TV[i-1][j-1]) - (PTV_N * TV[i-1][j+1]) + (dt * RvT * TF[i-1][(z-1)-j]);
+                TV[i][j] = -TV[i-1][j] * (PTV_L - 1 - PTV_N + dt*RvT) + (PTV_L * TV[i-1][j-1]) - (PTV_N * TV[i-1][j+1]) + (dt * RvT * TF[i-1][(z-1)-j]) + petrub;  // + perturbation of the temperature, the gas flow, the pressure differential
                 TF[i][j] = -TF[i-1][j] * (PTF - 1 + dt*RfT) + (PTF * TF[i-1][j-1]) + (dt * RfT * TV[i-1][(z-1)-j]);
 
                 // -----Calculate layer mass exchenger model------

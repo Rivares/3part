@@ -91,7 +91,6 @@ public:
     QFrame *line_2;
     QMenuBar *menuBar;
     QMenu *menu;
-    QMenu *menu_2;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -379,15 +378,12 @@ public:
         menuBar->setGeometry(QRect(0, 0, 818, 27));
         menu = new QMenu(menuBar);
         menu->setObjectName(QStringLiteral("menu"));
-        menu_2 = new QMenu(menuBar);
-        menu_2->setObjectName(QStringLiteral("menu_2"));
         MainWindow->setMenuBar(menuBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menu->menuAction());
-        menuBar->addAction(menu_2->menuAction());
         menu->addAction(action);
         menu->addSeparator();
         menu->addAction(action_3);
@@ -431,7 +427,6 @@ public:
         label_12->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#299d32;\">\320\237\320\260\321\200:</span></p></body></html>", 0));
         label_13->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#2677cd;\">\320\226\320\270\320\264\320\272\320\276\321\201\321\202\321\214:</span></p></body></html>", 0));
         menu->setTitle(QApplication::translate("MainWindow", "\320\244\320\260\320\271\320\273", 0));
-        menu_2->setTitle(QApplication::translate("MainWindow", "\320\241\320\277\321\200\320\260\320\262\320\272\320\260", 0));
     } // retranslateUi
 
 };
