@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <QString>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -22,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
         double RvM = 0.004302, RfM = 0.00001222, E = 0.000000001;
 
         //----------Petrtubation----------
-        double petrub = 8; // Temperature(min:-maxHeat:12.5), gas flow or pressure differential?
+        double petrub = 0; // Temperature(min:-maxHeat:12.5), gas flow or pressure differential?
 
         bmp.assign(z,0);
 
@@ -99,6 +100,52 @@ MainWindow::MainWindow(QWidget *parent) :
            }
         }
 
+
+        ofstream foutTV("Tpar.txt"); // 4(1)
+        for(int i = 0; i < N; i++)
+        {
+           for(int j = 0; j < 5; j++)
+           {
+               foutTV << TV[i][j] << " | ";
+           }
+           foutTV << endl;
+        }
+        foutTV.close();
+
+
+        ofstream foutTF("Tjyd.txt");  // 4(2)
+        for(int i = 0; i < N; i++)
+        {
+           for(int j = 0; j < 5; j++)
+           {
+               foutTF << TF[i][j] << " | ";
+           }
+           foutTF << endl;
+        }
+        foutTF.close();
+
+        ofstream foutCV("Cpar.txt"); // 4(1)
+        for(int i = 0; i < N; i++)
+        {
+           for(int j = 0; j < 5; j++)
+           {
+               foutCV << CV[i][j] << " | ";
+           }
+           foutCV << endl;
+        }
+        foutCV.close();
+
+
+        ofstream foutCF("Cjyd.txt");  // 4(2)
+        for(int i = 0; i < N; i++)
+        {
+           for(int j = 0; j < 5; j++)
+           {
+               foutCF << CF[i][j] << " | ";
+           }
+           foutCF << endl;
+        }
+        foutCF.close();
 
     //----------------------------------
 
