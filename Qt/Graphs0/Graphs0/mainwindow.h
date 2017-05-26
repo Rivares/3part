@@ -43,7 +43,9 @@ private slots:
 
     void on_save_clicked();
 
-  private:
+    void on_Hexch_toggled(bool checked);
+
+private:
     Ui::MainWindow *ui;
 
     // -----Model's heat exchenger parameters------

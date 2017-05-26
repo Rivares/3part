@@ -211,6 +211,7 @@ void MainWindow::drawGraph(bool notEmpty)
     paint.drawLine(0,Oy*onePixelY,pictWidth,Oy*onePixelY);
 
     paint.setPen(QPen(Qt::black,3));
+
     for(double i = leftX;i<=rightX;i+=10.0)
         paint.drawPoint((i+Ox)*onePixelX,Oy*onePixelY);
     for(double i = leftY;i<=rightY;i+=10.0)
@@ -264,9 +265,8 @@ void MainWindow::drawGraph(bool notEmpty)
         paint.setPen(QPen(Qt::green,1,Qt::SolidLine));
         paint.drawPath(path);
     }
-
-    if(ui->Mexch->isChecked()) {
-
+    else
+    {
         first[0] = 1;   first[1] = 1;
         for(short j = 1; j < (z-1); ++j)
         {
@@ -408,3 +408,27 @@ void MainWindow::on_save_clicked()
     msgBox.exec(); */
 }
 
+
+void MainWindow::on_Hexch_toggled(bool checked)
+{
+    if(checked)
+    {
+        ui->inputLeftY->clear();
+        ui->inputRightY->clear();
+        ui->inputLeftY->insert("100");
+        ui->inputRightY->insert("180");
+
+        leftY = ui->inputLeftY->text().toDouble();
+        rightY = ui->inputRightY->text().toDouble();
+    }
+    else
+    {
+        ui->inputLeftY->clear();
+        ui->inputRightY->clear();
+        ui->inputLeftY->insert("0");
+        ui->inputRightY->insert("90");
+
+        leftY = ui->inputLeftY->text().toDouble();
+        rightY = ui->inputRightY->text().toDouble();
+    }
+}

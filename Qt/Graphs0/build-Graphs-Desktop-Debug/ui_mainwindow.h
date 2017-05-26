@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -23,6 +22,7 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
@@ -69,10 +69,10 @@ public:
     QFrame *line_3;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_10;
-    QCheckBox *Hexch;
+    QRadioButton *Hexch;
     QLabel *label_9;
     QHBoxLayout *horizontalLayout_11;
-    QCheckBox *Mexch;
+    QRadioButton *Mexch;
     QLabel *label_10;
     QPushButton *draw;
     QPushButton *clear;
@@ -148,6 +148,7 @@ public:
 
         inputLeftX = new QLineEdit(layoutWidget);
         inputLeftX->setObjectName(QStringLiteral("inputLeftX"));
+        inputLeftX->setReadOnly(true);
 
         horizontalLayout->addWidget(inputLeftX);
 
@@ -197,6 +198,8 @@ public:
 
         inputLeftY = new QLineEdit(layoutWidget);
         inputLeftY->setObjectName(QStringLiteral("inputLeftY"));
+        inputLeftY->setEnabled(true);
+        inputLeftY->setReadOnly(false);
 
         horizontalLayout_6->addWidget(inputLeftY);
 
@@ -268,7 +271,7 @@ public:
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setSpacing(6);
         horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
-        Hexch = new QCheckBox(layoutWidget);
+        Hexch = new QRadioButton(layoutWidget);
         Hexch->setObjectName(QStringLiteral("Hexch"));
         Hexch->setMinimumSize(QSize(55, 20));
         Hexch->setMaximumSize(QSize(55, 16777215));
@@ -277,6 +280,8 @@ public:
         font.setUnderline(false);
         font.setKerning(true);
         Hexch->setFont(font);
+        Hexch->setChecked(true);
+        Hexch->setAutoRepeat(false);
 
         horizontalLayout_10->addWidget(Hexch);
 
@@ -291,7 +296,7 @@ public:
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setSpacing(6);
         horizontalLayout_11->setObjectName(QStringLiteral("horizontalLayout_11"));
-        Mexch = new QCheckBox(layoutWidget);
+        Mexch = new QRadioButton(layoutWidget);
         Mexch->setObjectName(QStringLiteral("Mexch"));
         Mexch->setMaximumSize(QSize(60, 16777215));
 
@@ -409,9 +414,9 @@ public:
         inputRightX->setText(QApplication::translate("MainWindow", "1000", 0));
         label_4->setText(QApplication::translate("MainWindow", "]", 0));
         label_5->setText(QApplication::translate("MainWindow", "T 'C = [", 0));
-        inputLeftY->setText(QApplication::translate("MainWindow", "0", 0));
+        inputLeftY->setText(QApplication::translate("MainWindow", "100", 0));
         label_6->setText(QApplication::translate("MainWindow", ",", 0));
-        inputRightY->setText(QApplication::translate("MainWindow", "200", 0));
+        inputRightY->setText(QApplication::translate("MainWindow", "180", 0));
         label_7->setText(QApplication::translate("MainWindow", "]", 0));
         label_8->setText(QApplication::translate("MainWindow", "\320\242\320\276\321\207\320\275\320\276\321\201\321\202\321\214", 0));
         inputAccuracy->setText(QApplication::translate("MainWindow", "700", 0));

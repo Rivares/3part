@@ -90,6 +90,9 @@
                    <property name="text">
                     <string>0</string>
                    </property>
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
                   </widget>
                  </item>
                 </layout>
@@ -138,8 +141,14 @@
                  </item>
                  <item>
                   <widget class="QLineEdit" name="inputLeftY">
+                   <property name="enabled">
+                    <bool>true</bool>
+                   </property>
                    <property name="text">
-                    <string>0</string>
+                    <string>100</string>
+                   </property>
+                   <property name="readOnly">
+                    <bool>false</bool>
                    </property>
                   </widget>
                  </item>
@@ -159,7 +168,7 @@
                    <item>
                     <widget class="QLineEdit" name="inputRightY">
                      <property name="text">
-                      <string>200</string>
+                      <string>180</string>
                      </property>
                     </widget>
                    </item>
@@ -210,7 +219,7 @@
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_10">
              <item>
-              <widget class="QCheckBox" name="Hexch">
+              <widget class="QRadioButton" name="Hexch">
                <property name="minimumSize">
                 <size>
                  <width>55</width>
@@ -233,6 +242,12 @@
                <property name="text">
                 <string/>
                </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+               <property name="autoRepeat">
+                <bool>false</bool>
+               </property>
               </widget>
              </item>
              <item>
@@ -247,7 +262,7 @@
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_11">
              <item>
-              <widget class="QCheckBox" name="Mexch">
+              <widget class="QRadioButton" name="Mexch">
                <property name="maximumSize">
                 <size>
                  <width>60</width>
